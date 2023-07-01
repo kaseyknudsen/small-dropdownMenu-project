@@ -41,7 +41,6 @@ const addMenuOptions = () => {
 };
 
 addMenuOptions();
-
 dropdownMenu.addEventListener("change", () => {
   const selectedColor = dropdownMenu.value;
 
@@ -50,3 +49,4 @@ dropdownMenu.addEventListener("change", () => {
     divCircle.style.backgroundColor = colorObject.color;
   }
 });
+
