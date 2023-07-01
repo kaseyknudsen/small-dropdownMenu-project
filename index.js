@@ -50,3 +50,6 @@ dropdownMenu.addEventListener("change", () => {
   }
 });
 
+//dropdown 2
+const container2 = document.querySelector(".container2")
+
