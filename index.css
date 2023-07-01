@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+}
+
+.circle {
+  width: 20%;
+  height: 20%;
+  border: 1px solid red;
+  border-radius: 50%;
+  margin-top: 2em;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2px;
+  font-family: "Playfair Display", serif;
+}
+.label {
+  margin-bottom: 5px;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+}
