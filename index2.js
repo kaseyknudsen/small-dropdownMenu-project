@@ -54,7 +54,5 @@ dropdownMenu.addEventListener("change", () => {
 
   const colorObject = colors.find((color) => selectedOption === color.text);
 
-  if (colorObject) {
-    divSquare.style.backgroundColor = colorObject.color;
-  }
+  colorObject ? (divSquare.style.backgroundColor = colorObject.color) : null;
 });
