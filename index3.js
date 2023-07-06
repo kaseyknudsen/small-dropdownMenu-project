@@ -1,55 +1,43 @@
-const container = document.querySelector(".container");
-const dropdownMenu = document.createElement("select");
-dropdownMenu.className = "dropdown";
-const label = document.createElement("label");
-label.textContent = "Change Circle Color";
-label.className = "label";
-container.appendChild(label);
-container.appendChild(dropdownMenu);
-const divCircle = document.createElement("div");
-container.appendChild(divCircle);
-divCircle.className = "circle";
-
-const colors = [
+const buttons = [
   {
-    text: "choose color...",
+    id: 1,
+    label: "Button 1",
+    active: false,
   },
   {
-    text: "Turn Circle Red",
-    color: "Red",
+    id: 2,
+    label: "Button 2",
+    active: false,
   },
   {
-    text: "Turn Circle Blue",
-    color: "Blue",
-  },
-  {
-    text: "Turn Circle Green",
-    color: "Green",
-  },
-  {
-    text: "Turn Circle Yellow",
-    color: "Yellow",
+    id: 3,
+    label: "Button 3",
+    active: false,
   },
 ];
 
-const addMenuOptions = () => {
-  colors.map((colorOption, idx) => {
-    const color = document.createElement("option");
-    dropdownMenu.appendChild(color);
-    color.innerHTML = colorOption.text;
+const renderButtons = () => {
+  const container = document.getElementById("toggleButtons");
+
+  buttons.forEach((button) => {
+    const buttonElement = document.createElement("button");
+    buttonElement.innerText = button.label;
+    buttonElement.className = "button";
+    container.appendChild(buttonElement);
+    buttonElement.addEventListener("click", () => {
+      if (!button.active) {
+        button.active = true;
+        buttonElement.style.backgroundColor = "red";
+        buttonElement.innerText = "change back";
+        buttonElement.style.color = "white";
+      } else {
+        buttonElement.style.backgroundColor = "white";
+        buttonElement.innerText = button.label;
+        buttonElement.style.color = "red";
+        button.active = false;
+      }
+    });
   });
 };
 
-addMenuOptions();
-dropdownMenu.addEventListener("change", () => {
-  const selectedColor = dropdownMenu.value;
-
-  const colorObject = colors.find((color) => color.text === selectedColor);
-  if (colorObject) {
-    divCircle.style.backgroundColor = colorObject.color;
-  }
-});
-
-//dropdown 2
-const container2 = document.querySelector(".container2")
-
+renderButtons();

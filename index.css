@@ -71,3 +71,15 @@ a:hover {
   border: 1px solid red;
   margin-top: 4em;
 }
+
+.active {
+  background-color: #f00;
+  color: #fff;
+}
+
+.button {
+  background-color: #fff;
+  color: red;
+  margin: 5em;
+  padding: 10px;
+}
